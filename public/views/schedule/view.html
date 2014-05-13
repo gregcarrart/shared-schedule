@@ -1,0 +1,21 @@
+<section data-ng-controller="ScheduleController" data-ng-init="findOne()">
+    <h2>{{event.title}}</h2>
+    <div>
+        <span>Created by: {{event.user.name}}</span>
+    </div>
+    <div>
+        <span>Start Date: {{event.start}}</span>
+    </div>
+    <div>
+        <span>End Date: {{event.end}}</span>
+    </div>
+
+    <div data-ng-show="global.user._id == event.user._id">
+        <a class="btn" href="/#!/schedule/{{event._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn" data-ng-click="remove();">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+</section>
